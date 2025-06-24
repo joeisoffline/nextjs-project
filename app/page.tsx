@@ -16,12 +16,8 @@ export default function Home() {
           <li className="mb-2 tracking-[-.01em]">
             Get started by editing{" "}
             <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx to see changes update
+              app/page.tsx. Changes are updated instantly when you save.
             </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Changes are updated instantly 
           </li>
         </ol>
       </main>
