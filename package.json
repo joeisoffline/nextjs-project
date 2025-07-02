@@ -1,24 +1,26 @@
 {
-  "name": "nextjs",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vercel-crm",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "postinstall": "prisma generate",
+    "migrate": "prisma migrate deploy"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.3.3"
+    "@prisma/client": "^5.0.0",
+    "next": "^14.3.0",
+    "next-auth": "^4.30.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "shadcn/ui": "^0.10.0",
+    "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4"
+    "prisma": "^5.0.0",
+    "typescript": "^5.1.0",
+    "postcss": "^8.4.20",
+    "autoprefixer": "^10.4.14"
   }
 }
