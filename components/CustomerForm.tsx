@@ -1,4 +1,5 @@
 "use client";
+
 export default function CustomerForm() {
   return (
     <form className="space-y-4">
