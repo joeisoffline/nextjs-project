@@ -5,10 +5,13 @@ import CustomerForm from "@/components/CustomerForm";
 
 export default async function Dashboard() {
   const session = await getServerSession(authOptions);
-  if (!session) return <p>Please sign in.</p>;
+  
+  if (!session?.user?.email) {
+    return <p>Please sign in.</p>;
+  }
 
   const customers = await prisma.customer.findMany({
-    where: { owner: { email: session.user.email! } },
+    where: { owner: { email: session.user.email } },
     orderBy: { createdAt: "desc" }
   });
 
