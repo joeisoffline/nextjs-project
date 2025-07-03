@@ -1,30 +1,24 @@
 "use client";
-
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-
 export default function CustomerForm() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const router = useRouter();
-
-  async function submit(e: React.FormEvent) {
-    e.preventDefault();
-    await fetch("/api/customers", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email })
-    });
-    setName("");
-    setEmail("");
-    router.refresh();
-  }
-
   return (
-    <form onSubmit={submit} className="flex space-x-2">
-      <input placeholder="Name" value={name} onChange={e => setName(e.target.value)} className="border p-2 rounded flex-1" />
-      <input placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} className="border p-2 rounded flex-1" />
-      <button type="submit" className="bg-blue-600 text-white px-4 rounded">Add</button>
+    <form className="space-y-4">
+      <input type="text" name="name" placeholder="Customer name" className="w-full p-2 border rounded" />
+      <input type="email" name="email" placeholder="Email address" className="w-full p-2 border rounded" />
+      <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">Add Customer</button>
     </form>
+  );
+}
+
+// === components/CustomerList.tsx ===
+export default function CustomerList({ customers }: { customers: any[] }) {
+  return (
+    <ul className="space-y-3 mt-6">
+      {customers.map((c) => (
+        <li key={c.id} className="p-4 border rounded shadow">
+          <div className="font-bold">{c.name}</div>
+          <div className="text-sm text-gray-600">{c.email}</div>
+        </li>
+      ))}
+    </ul>
   );
 }
