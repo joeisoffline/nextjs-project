@@ -8,7 +8,7 @@ export default async function Dashboard() {
   const session = await getServerSession(authOptions);
 
   if (!session?.user?.email) {
-    return <p>Please sign in.</p>;
+    return <p>Sign in</p>;
   }
 
   const customers = await prisma.customer.findMany({
