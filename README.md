@@ -1,1 +1,5 @@
-Building and deploying on vercel. Stay tuned for updates on the progress of this!
+Stay tuned for updates on this build!
+
+##Setup##
+
+Deployed using Vercel
