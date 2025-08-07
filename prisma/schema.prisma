@@ -1,6 +1,6 @@
 datasource db {
   provider = "postgresql"
-  url      = env("prisma+postgres://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiMDFKWjhOUFdWTkRQQVdDTjVRV1RQMEpBUlEiLCJ0ZW5hbnRfaWQiOiI1ZDdkYThhOWFmMGRhN2NlNWYxNjQ0Njc3ODE1Yjk3YjFhYWIwNmIzNmE3OTAyNzdkZGUzOWYyOTkwYTFhYzI1IiwiaW50ZXJuYWxfc2VjcmV0IjoiZTgwNjA3MjYtNTJiMC00MzA4LTgxODEtMjg4ZTk0YjIyZjZkIn0.BH_52V5fpGJ6mYhu0kppJrdb8CGMsCmg-L4Znm9Cw2k")
+  url      = env("DATABASE_URL")
 }
 
 model User {
