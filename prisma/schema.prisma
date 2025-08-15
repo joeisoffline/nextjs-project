@@ -18,3 +18,4 @@ model Customer {
   owner     User     @relation(fields: [ownerId], references: [id])
   createdAt DateTime @default(now())
 }
+
